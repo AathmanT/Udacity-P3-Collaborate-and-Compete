@@ -13,7 +13,7 @@ WEIGHT_DECAY = 0       # L2 weight decay
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 
-class Agent:
+class Agent():
     """Interacts with and learns from the environment."""
     def __init__(self, state_size=24, action_size=2, seed=0):
         """Initialize an Agent object.

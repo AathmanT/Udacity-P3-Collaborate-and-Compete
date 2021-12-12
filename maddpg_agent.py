@@ -18,7 +18,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 comment = " LR_ACTOR=1e-4 LR_CRITIC=1e-3 sigma=0.2 theta=0.1 grad clipping 2 samples [128,128]"
 
 
-class MultiAgent:
+class MultiAgent():
 
     def __init__(self, num_agents=2, seed=0, state_size=24, action_size=2):
 

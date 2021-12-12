@@ -195,7 +195,7 @@ def maddpg(n_episodes=4000, max_t=1000, print_every=100):
     return scores, avg_scores
 
 
-# In[ ]:
+# In[9]:
 
 
 print(agent.agents[0].actor_local)
@@ -205,7 +205,7 @@ scores, avg_scores = maddpg()
 
 # ### 6. Plot the rewards
 
-# In[ ]:
+# In[10]:
 
 
 fig = plt.figure(figsize=(16, 8))
@@ -270,4 +270,10 @@ for i in range(1, 6):                                      # play game for 5 epi
 
 
 env.close()
+
+
+# In[ ]:
+
+
+
 

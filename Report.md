@@ -41,10 +41,11 @@ In this implementation instead of learning and updating the weights at every tim
 **Neural Network Architecture**  
 For the actor network, the state space size is 24 variables, therefore the input layer size is also 24.
 The hidden layers sizes are 128 and 128 and since the action space size is 2 the output size of the NN is also 2.
+The actor network uses Relu activation function for all the layers except the last layer. These layers are first batch normalized and then fed through the Relu function. For the last layer a tanh activation function is used.
 
 The critic network takes the state space of both agents hence its size will be 48. The first layer takes the states and the output is concatenated with the actions of both agents (size will be 4) and sent to the 
-second hidden layer. This will be used to estimated the action-value function hence the output size will be 1.
-
+second hidden layer. This will be used to estimate the action-value function hence the output size will be 1.
+In the critic network the first layer is batch normalized and passed through a Relu function. Next the concatenated vector mentioned above, is passed through a Relu function and the last layer doesn't have any activation functions.
 ```
 Actor(
   (actor_fc1): Linear(in_features=24, out_features=128, bias=True)
